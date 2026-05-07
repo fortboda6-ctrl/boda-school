@@ -3,568 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية بودا - الاختراق الأخلاقي</title>
+    <title>Kholoud Vibes | معايا هتتعلم الإنجلش من غير ما تحس 🔥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif;}
-        body {
-            background: #0a0e27;
-            color: #e0e0e0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-       .container {
-            width: 90%;
-            max-width: 800px;
-            background: #151933;
-            border: 2px solid #00ff88;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 0 30px rgba(0,255,136,0.3);
-        }
-        h1 {
-            text-align: center;
-            color: #00ff88;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            font-weight: 900;
-        }
-        h2 {color: #00ff88; margin: 20px 0;}
-        input, select, button {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: #0a0e27;
-            border: 2px solid #2a2f4a;
-            border-radius: 10px;
-            color: #e0e0e0;
-            font-size: 1.1rem;
-        }
-        button {
-            background: linear-gradient(45deg, #00ff88, #00cc6a);
-            color: #0a0e27;
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
-        }
-        button:hover {opacity: 0.9;}
-        button:disabled {opacity: 0.3; cursor: not-allowed;}
-       .hidden {display: none;}
-       .lesson {
-            line-height: 2;
-            font-size: 1.1rem;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 20px;
-            background: #0a0e27;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
-       .lesson h3 {color: #ff0080; margin: 20px 0 10px 0;}
-       .quiz {margin: 20px 0;}
-       .quiz-option {
-            background: #0a0e27;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 2px solid #2a2f4a;
-        }
-       .quiz-option:hover {border-color: #00ff88;}
-       .quiz-option.selected {border-color: #00ff88; background: rgba(0,255,136,0.1);}
-       .quiz-option.correct {border-color: #00ff00; background: rgba(0,255,0,0.1);}
-       .quiz-option.wrong {border-color: #ff0000; background: rgba(255,0,0,0.1);}
-       .device-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-       .device {
-            background: #0a0e27;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            border: 2px solid #2a2f4a;
-        }
-       .device:hover {border-color: #00ff88;}
-       .device.icon {font-size: 2.5rem; margin-bottom: 10px;}
-       .terminal {
-            background: #000;
-            color: #0f0;
-            padding: 20px;
-            border-radius: 10px;
-            font-family: monospace;
-            margin: 20px 0;
-            min-height: 200px;
-        }
-       .timer {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #ff0080;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 700;
-        }
-        #certCanvas {width: 100%; border: 2px solid #00ff88; border-radius: 10px;}
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+        body{background:#FFF9E6;color:#333;overflow-x:hidden}
+        .welcome{position:fixed;top:0;left:0;width:100%;height:100vh;background:url('attachment://0') center/cover;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transition:0.8s}
+        .welcome.hide{transform:translateY(-100%)}
+        .welcome h1{background:rgba(255,255,255,0.9);padding:20px;border-radius:20px;font-size:28px;font-weight:900;color:#00B8D4;margin-bottom:30px}
+        .welcome button{background:#FFD400;color:#333;border:none;padding:15px 40px;font-size:22px;font-weight:700;border-radius:50px;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.3)}
+        .welcome button:hover{transform:scale(1.05)}
+        .container{max-width:1200px;margin:0 auto;padding:20px}
+        .header{text-align:center;padding:40px 0 20px}
+        .header img{max-width:350px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+        .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:40px 0}
+        .video-card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1);cursor:pointer;transition:0.3s}
+        .video-card:hover{transform:translateY(-5px)}
+        .video-thumb{position:relative;width:100%;padding-top:56.25%;background:#ddd}
+        .video-thumb iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+        .contact{text-align:center;margin:50px 0}
+        .contact a{background:#00B8D4;color:white;padding:15px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:18px;display:inline-block}
+        .footer{text-align:center;padding:30px 10px;font-size:11px;color:#aaa}
+        .popup{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:999;display:none;justify-content:center;align-items:center}
+        .popup.active{display:flex}
+        .popup-content{width:90%;max-width:800px;position:relative}
+        .popup-content iframe{width:100%;height:450px;border:0;border-radius:10px}
+        .close{position:absolute;top:-40px;right:0;color:white;font-size:35px;cursor:pointer}
     </style>
 </head>
 <body>
-    <div class="timer hidden" id="timer">⏱️ <span id="timeCount">60</span></div>
+    <!-- شاشة الدخول -->
+    <div class="welcome" id="welcome">
+        <h1>دوس وتابع كورسات الميس خلود 💛</h1>
+        <button onclick="enterSite()">يلا بينا 🔥</button>
+    </div>
 
+    <!-- الموقع -->
     <div class="container">
-        <!-- شاشة الباسورد -->
-        <div id="passScreen">
-            <h1>🎓 أكاديمية بودا</h1>
-            <p style="text-align:center; margin-bottom:20px;">دخل الباسورد عشان تدخل الأكاديمية</p>
-            <input type="password" id="password" placeholder="الباسورد">
-            <button id="passBtn">دخول</button>
-            <p id="passError" style="color:#ff0080; text-align:center; margin-top:10px;"></p>
+        <div class="header">
+            <img src="attachment://1" alt="Kholoud Vibes">
         </div>
 
-        <!-- شاشة الاسم -->
-        <div id="nameScreen" class="hidden">
-            <h1>أهلاً بيك في الأكاديمية</h1>
-            <input type="text" id="studentName" placeholder="اكتب اسمك">
-            <button id="nameBtn">ابدأ التعلم</button>
-        </div>
+        <div class="videos" id="videos"></div>
 
-        <!-- شاشة الأقسام -->
-        <div id="sectionScreen" class="hidden">
-            <h1>اختار القسم يا <span id="sName1"></span></h1>
-            <button onclick="openLesson('basics')">1. أساسيات الأمن السيبراني</button>
-            <button onclick="openLesson('network')">2. اختراق الشبكات</button>
-            <button onclick="openLesson('web')">3. ثغرات المواقع</button>
-            <button onclick="openLesson('social')">4. الهندسة الاجتماعية</button>
-            <button onclick="openLesson('final')">5. المشروع النهائي</button>
-        </div>
-
-        <!-- شاشة الشرح -->
-        <div id="lessonScreen" class="hidden">
-            <h2 id="lessonTitle"></h2>
-            <div class="lesson" id="lessonText"></div>
-            <button id="understoodBtn" disabled>تم الفهم - ابدأ الاختبار</button>
-        </div>
-
-        <!-- شاشة الكويز -->
-        <div id="quizScreen" class="hidden">
-            <h2>اختبار يا <span id="sName2"></span></h2>
-            <p>جاوب 2 صح من 3 عشان تعدي</p>
-            <div id="quizBox"></div>
-            <button id="checkQuizBtn">تأكيد الإجابات</button>
-        </div>
-
-        <!-- شاشة الأجهزة -->
-        <div id="deviceScreen" class="hidden">
-            <h2>اختار الهدف يا <span id="sName3"></span></h2>
-            <div class="device-grid" id="devices"></div>
-        </div>
-
-        <!-- شاشة المحاكي -->
-        <div id="simScreen" class="hidden">
-            <h2 id="simTitle"></h2>
-            <div id="simContent"></div>
-            <button onclick="backToDevices()">رجوع</button>
-        </div>
-
-        <!-- شاشة الشهادة -->
-        <div id="certScreen" class="hidden">
-            <h1>🎉 مبروك يا <span id="sName4"></span></h1>
-            <canvas id="certCanvas" width="800" height="600"></canvas>
-            <button id="downloadBtn">📥 تحميل الشهادة</button>
-            <button onclick="location.reload()">🔄 دورة جديدة</button>
+        <div class="contact">
+            <a href="https://www.facebook.com/share/18hoxaWSV4/" target="_blank" onclick="playMeow()">تواصل مع الميس خلود 💛</a>
         </div>
     </div>
 
-<script>
-let studentName = '';
-let currentLesson = '';
-let quizAns = [];
-let timerInt;
-let synth = window.speechSynthesis;
-let completedDevices = 0;
+    <div class="footer">
+        مطور الموقع: بودا المصري | 01122989039
+    </div>
 
-const devices = [
-    {id:'android', name:'موبايل أندرويد', icon:'📱'},
-    {id:'iphone', name:'آيفون', icon:'📲'},
-    {id:'windows', name:'لاب ويندوز', icon:'💻'},
-    {id:'linux', name:'سيرفر لينكس', icon:'🖥️'},
-    {id:'router', name:'راوتر WiFi', icon:'📡'},
-    {id:'camera', name:'كاميرا مراقبة', icon:'📹'},
-    {id:'facebook', name:'حساب فيسبوك', icon:'👥'},
-    {id:'gmail', name:'حساب جيميل', icon:'📧'},
-    {id:'website', name:'موقع شركة', icon:'🌐'},
-    {id:'atm', name:'ماكينة ATM', icon:'🏧'}
-];
+    <!-- Popup الفيديو -->
+    <div class="popup" id="popup" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <iframe id="popupFrame" allowfullscreen></iframe>
+        </div>
+    </div>
 
-const lessons = {
-basics: {
-title:'أساسيات الأمن السيبراني',
-text:`
-<h3>يعني ايه اختراق أخلاقي يا ${studentName}؟</h3>
-<p>الاختراق الأخلاقي هو انك تستخدم نفس أدوات الهاكر بس بموافقة صاحب السيستم عشان تكشف الثغرات قبل المجرمين. يعني انت الحارس مش الحرامي.</p>
-<h3>ليه المجال ده مهم؟</h3>
-<p>كل 39 ثانية فيه هجمة سيبرانية بتحصل في العالم. الشركات بتخسر مليارات بسبب الاختراقات سنوياً. مطلوب 3.5 مليون خبير أمن سيبراني ومش لاقيين. مرتبات بتبدأ من 15 ألف لحد 100 ألف جنيه.</p>
-<h3>أنواع الهاكرز</h3>
-<p><strong>White Hat:</strong> ده انت.. بتشتغل قانوني وبتاخد فلوس. بتكشف الثغرات وتبلغ الشركة وتصلحها.</p>
-<p><strong>Black Hat:</strong> المجرم اللي بيخترق يسرق ويبتز. ده بيروح السجن.</p>
-<p><strong>Grey Hat:</strong> في النص.. بيخترق من غير إذن بس يبلغ. برضو غلط قانوناً.</p>
-<h3>مراحل الاختراق الأخلاقي الخمسة</h3>
-<p><strong>1. الاستطلاع Reconnaissance:</strong> تجمع معلومات عن الهدف من جوجل والسوشيال ميديا. تعرف الإيميلات والموظفين والـ IP.</p>
-<p><strong>2. الفحص Scanning:</strong> تستخدم nmap تشوف البورتات المفتوحة والخدمات. بورت 80 يعني موقع، بورت 22 يعني SSH.</p>
-<p><strong>3. الاستغلال Gaining Access:</strong> تدخل من الثغرة اللي لقيتها. ممكن SQL Injection أو باسورد ضعيف.</p>
-<p><strong>4. الحفاظ على الوصول:</strong> تثبت backdoor عشان ترجع تاني. تتأكد ان الثغرة لسه موجودة.</p>
-<p><strong>5. مسح الآثار:</strong> تمسح اللوجز عشان محدش يعرف انك كنت هنا. بس في الحقيقي بتسيب تقرير للشركة.</p>
-<h3>أدوات الهاكر الأساسية</h3>
-<p><strong>Kali Linux:</strong> نظام تشغيل فيه 600 أداة اختراق جاهزة. أشهر توزيعة للهاكرز.</p>
-<p><strong>Nmap:</strong> ماسح الشبكات.. يعرفك ايه الأجهزة اللي شغالة. nmap -sV 192.168.1.1</p>
-<p><strong>Burp Suite:</strong> يمسك الترافيك بينك وبين الموقع. تعدل الريكويستات.</p>
-<p><strong>Metasploit:</strong> مكتبة ثغرات جاهزة للاستغلال. آلاف الـ exploits.</p>
-<p><strong>Wireshark:</strong> يشوف كل باكت ماشية في الشبكة. تحلل الترافيك.</p>
-<h3>القوانين والعقوبات في مصر</h3>
-<p>قانون مكافحة جرائم تقنية المعلومات 175 لسنة 2018. اختراق موقع: حبس من 3 شهور لسنة + غرامة 50 ألف. سرقة بيانات: حبس من سنة لـ 5 سنين + غرامة 500 ألف. الابتزاز الإلكتروني: حبس من 3 لـ 15 سنة.</p>
-<h3>ازاي تشتغل قانوني؟</h3>
-<p>لازم عقد مكتوب من الشركة قبل ما تبدأ. تحدد نطاق الشغل IP addresses محددة بس. متخترقش برا النطاق حتى لو لقيت ثغرة. تكتب تقرير مفصل بكل حاجة عملتها.</p>
-<h3>نصايح للمبتدئين</h3>
-<p>اتعلم لينكس كويس.. 90% من السيرفرات لينكس. اتعلم شبكات CCNA هتفيدك جامد. حل CTF على TryHackMe و HackTheBox. خد شهادات CEH و OSCP لو عايز تشتغل. متستخدمش اللي اتعلمته في الشر.. ربنا شايفك.</p>
-`,
-quiz:[
-{q:'كام مرحلة في الاختراق الأخلاقي؟', opt:['3','5','7','10'], c:1},
-{q:'أداة nmap بتعمل ايه؟', opt:['تشفير','مسح الشبكات','تصميم','مونتاج'], c:1},
-{q:'عقوبة اختراق موقع في مصر؟', opt:['مفيش','غرامة بس','حبس وغرامة','إعدام'], c:2}
-]},
-network:{
-title:'اختراق الشبكات',
-text:`
-<h3>يعني ايه شبكة يا ${studentName}؟</h3>
-<p>الشبكة مجموعة أجهزة متوصلة ببعض.. زي البيت عندك الراوتر والكمبيوتر والموبايل كلهم على شبكة واحدة. الـ IP زي عنوان البيت.</p>
-<h3>أنواع الشبكات</h3>
-<p><strong>LAN:</strong> شبكة محلية زي البيت أو الشركة. سريعة ومحدودة.</p>
-<p><strong>WAN:</strong> شبكة واسعة زي الإنترنت. بتربط دول ببعض.</p>
-<p><strong>WLAN:</strong> شبكة وايرلس WiFi. من غير سلوك.</p>
-<h3>ثغرات الواي فاي المشهورة</h3>
-<p><strong>WEP:</strong> تشفير قديم بيتكسر في دقيقتين. محدش بيستخدمه خلاص.</p>
-<p><strong>WPS:</strong> زرار في الراوتر.. ثغرة كبيرة. لو مفعل يتكسر بسهولة.</p>
-<p><strong>WPA2 Handshake:</strong> تمسك الـ handshake وتكسره بـ wordlist. لو الباسورد في الليست هيتكسر.</p>
-<p><strong>Evil Twin:</strong> تعمل شبكة وهمية بنفس اسم الشبكة الحقيقية. الناس تدخل عندك.</p>
-<h3>أوامر nmap المهمة</h3>
-<p><code>nmap 192.168.1.1</code> - مسح سريع يعرف البورتات المفتوحة.</p>
-<p><code>nmap -sV 192.168.1.1</code> - يعرف إصدارات الخدمات. مهم جداً.</p>
-<p><code>nmap -A 192.168.1.1</code> - مسح شامل بكل حاجة. بطيء بس دقيق.</p>
-<p><code>nmap -p- 192.168.1.1</code> - يمسح كل البورتات 65535. بياخد وقت.</p>
-<h3>هجوم Man in the Middle</h3>
-<p>يعني تقف في النص بين الراوتر والضحية.. كل الترافيك يعدي عليك الأول. بتتعمل بـ ARP Spoofing. تشوف كل الباسوردات.</p>
-<h3>أداة Aircrack-ng</h3>
-<p>تمسك handshake من الواي فاي. تستخدم wordlist تجرب باسوردات. لو الباسورد ضعيف هيتكسر. rockyou.txt فيها 14 مليون باسورد.</p>
-<h3>ازاي تحمي الواي فاي بتاعك؟</h3>
-<p>استخدم WPA3 أو WPA2 على الأقل. اقفل WPS من الراوتر. باسورد طويل 12 حرف + أرقام + رموز. اخفي اسم الشبكة SSID. فعل MAC Filtering. حدث الراوتر دايماً.</p>
-`,
-quiz:[
-{q:'ايه أضعف تشفير WiFi؟', opt:['WPA3','WPA2','WEP','WPA'], c:2},
-{q:'nmap -sV بيعمل ايه؟', opt:['مسح سريع','يعرف الإصدارات','يهاجم','يحمي'], c:1},
-{q:'ازاي تحمي الواي فاي؟', opt:['WEP','باسورد 12345','WPA3 + باسورد قوي','تسيبه مفتوح'], c:2}
-]},
-web:{
-title:'ثغرات المواقع',
-text:`
-<h3>يعني ايه ثغرة ويب يا ${studentName}؟</h3>
-<p>غلطة في كود الموقع تسمحلك تعمل حاجة مش المفروض تعملها.. زي تشوف باسوردات الناس أو تمسح الداتابيز.</p>
-<h3>أشهر ثغرات OWASP Top 10</h3>
-<p><strong>1. SQL Injection:</strong> تحقن كود SQL في الموقع وتسحب الداتابيز كلها. أخطر ثغرة.</p>
-<p><strong>2. XSS:</strong> تحقن جافاسكريبت تسرق الكوكيز بتاعة الأدمن. Cross Site Scripting.</p>
-<p><strong>3. CSRF:</strong> تخلي اليوزر يعمل حاجة من غير ما يعرف. يغير باسورده مثلاً.</p>
-<p><strong>4. Broken Authentication:</strong> تكسر تسجيل الدخول. تدخل أدمن.</p>
-<p><strong>5. Sensitive Data Exposure:</strong> الداتا مش متشفرة. الباسوردات plain text.</p>
-<h3>SQL Injection بالتفصيل</h3>
-<p>لما الموقع ياخد input من اليوزر ويحطه في query من غير فلترة:</p>
-<p><code>SELECT * FROM users WHERE username='admin'--' AND password=''</code></p>
-<p>الـ -- بتعلق باقي الكود.. فتدخل أدمن من غير باسورد! الثغرة دي جابت ملايين.</p>
-<h3>XSS - Cross Site Scripting</h3>
-<p>تحقن كود جافاسكريبت في الكومنتات أو البحث:</p>
-<p><code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></p>
-<p>لو الموقع طبعه.. الكود يشتغل وتسرق السيشن. تدخل حساب الأدمن.</p>
-<h3>أداة Burp Suite</h3>
-<p>بروكسي يمسك كل الريكويستات. تعمل Intercept وتعدل الداتا. تعمل Spider للموقع كله. تجرب payloads بـ Intruder. أهم أداة للويب.</p>
-<h3>ازاي تحمي موقعك؟</h3>
-<p>فلتر كل الـ input من اليوزر. استخدم Prepared Statements في SQL. اعمل Encode للـ output عشان XSS. استخدم HTTPS دايماً. حدث المكتبات والـ Frameworks. اعمل WAF.</p>
-`,
-quiz:[
-{q:'SQL Injection بتستغل ايه؟', opt:['الصور','قاعدة البيانات','التصميم','السيرفر'], c:1},
-{q:'XSS بيحقن ايه؟', opt:['SQL','HTML','JavaScript','CSS'], c:2},
-{q:'Burp Suite بيعمل ايه؟', opt:['يصمم','يمسك الترافيك','يشفر','يبرمج'], c:1}
-]},
-social:{
-title:'الهندسة الاجتماعية',
-text:`
-<h3>يعني ايه هندسة اجتماعية يا ${studentName}؟</h3>
-<p>انك تخدع البني آدم نفسه مش الجهاز.. أخطر نوع هجمات لأن البشر أضعف حلقة. 90% من الاختراقات بتبدأ بإيميل.</p>
-<h3>أنواع الهجمات</h3>
-<p><strong>Phishing:</strong> إيميل مزور شبه البنك يطلب الباسورد. أشهر هجمة.</p>
-<p><strong>Vishing:</strong> مكالمة تليفون "انا من البنك هات الكود". صوت واثق.</p>
-<p><strong>Smishing:</strong> رسالة SMS فيها لينك ملغم. "مبروك كسبت".</p>
-<p><strong>Baiting:</strong> تسيب فلاشة ملغمة.. الفضول يقتل. يحطها في جهازه.</p>
-<p><strong>Pretexting:</strong> تخلق سيناريو كدب عشان تاخد معلومات. "انا من IT".</p>
-<h3>ازاي بيعملوا Phishing؟</h3>
-<p>يعملوا صفحة شبه فيسبوك بالظبط. يبعتهالك على الإيميل "حسابك هيتقفل". تدخل الباسورد.. يروحلهم. مبروك اتسرقت 😅</p>
-<h3>علامات الإيميل المزور</h3>
-<p>أخطاء إملائية كتير. الإيميل من gmail مش من الشركة. بيستعجلك "حالاً" "فوراً". اللينك مش نفس الدومين. يطلب باسورد أو كود. مفيش اسمك.</p>
-<h3>ازاي تحمي نفسك؟</h3>
-<p>متدوسش على لينكات من إيميلات. اتأكد من الدومين كويس. فعل التحقق بخطوتين 2FA. البنك عمره ما يطلب الباسورد. شكيت؟ اتصل بالبنك بنفسك. علم أهلك.</p>
-<h3>قصة حقيقية</h3>
-<p>شركة خسرت 2 مليون دولار عشان الموظف حول الفلوس بعد إيميل من "المدير". الإيميل كان مزور! اتأكد دايماً بالتليفون. الثقة الزيادة بتخسر.</p>
-`,
-quiz:[
-{q:'Phishing يعني ايه؟', opt:['صيد سمك','إيميل مزور','برمجة','تصميم'], c:1},
-{q:'البنك يطلب الباسورد؟', opt:['اه دايماً','لا عمره','ساعات','في الطوارئ'], c:1},
-{q:'ازاي تحمي نفسك؟', opt:['تدوس على كل لينك','تدي الباسورد','تفعل 2FA','تطفي النت'], c:2}
-]},
-final:{
-title:'المشروع النهائي',
-text:`
-<h3>وصلنا للنهائي يا ${studentName} 🎯</h3>
-<p>دلوقتي هتطبق كل اللي اتعلمته في محاكاة كاملة.. اختار جهاز من الـ 10 واخترقه خطوة خطوة. ده اختبار حقيقي.</p>
-<h3>المراحل الثلاثة لكل جهاز</h3>
-<p><strong>1. جمع المعلومات:</strong> تعرف IP - البورتات - الخدمات - الثغرات. استخدم nmap.</p>
-<p><strong>2. الاستغلال:</strong> تستخدم الثغرة تدخل الجهاز. ممكن باسورد ضعيف أو exploit.</p>
-<p><strong>3. سحب الداتا:</strong> تاخد الملفات المطلوبة وتكتب تقرير. اثبت انك دخلت.</p>
-<h3>قواعد المشروع</h3>
-<p>كل جهاز = 100 نقطة. لو غلطت 3 مرات تعيد المرحلة. في تلميحات بس بتخصم 10 نقاط. لازم تكتب الأوامر صح بالظبط. ممنوع الغش.</p>
-<h3>نصايح أخيرة</h3>
-<p>اقرا الشرح كويس قبل ما تبدأ. جرب الأوامر في دماغك الأول. متستعجلش.. خد وقتك. لو علقت دوس تلميح. الأهم: ده تعليم بس.. متطبقش على حد حقيقي. هتروح السجن.</p>
-<h3>بعد ما تخلص</h3>
-<p>هتاخد شهادة معتمدة من الأكاديمية + 1000 نقطة + لقب "هاكر أخلاقي محترف". تقدر تحطها في الـ CV وتقدم على شغل. مرتبات من 20 لـ 100 ألف.</p>
-`,
-quiz:[
-{q:'كام مرحلة في كل جهاز؟', opt:['1','2','3','5'], c:2},
-{q:'كل جهاز بكام نقطة؟', opt:['10','50','100','500'], c:2},
-{q:'لو غلطت 3 مرات؟', opt:['تعدي','تعيد المرحلة','تخسر','تاخد صفر'], c:1}
-]}};
+    <audio id="meow" src="meow.mp3"></audio>
 
-function speak(text) {
-    if (synth.speaking) synth.cancel();
-    let u = new SpeechSynthesisUtterance(text);
-    u.lang = 'ar-SA';
-    u.rate = 1;
-    synth.speak(u);
-}
+    <script>
+        const videos = [
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1LUVeJS65S/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1DWWnbaVXX/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/18YDNPT5TD/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1DFZf9Uzsu/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1CbngVHKwq/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1BWc5cLTwS/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1bDMHQ7AHG/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1CqP7HMvxK/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1EDWmxVbtG/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/18uKbDPPk7/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1B9hrN55Kx/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/19rmNprtgf/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1Gx9R8vACQ/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1HAMZxCetx/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/18TJKV7zuQ/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/1B3hhDs1Q2/",
+            "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/share/r/18aZ8c2za9/"
+        ];
 
-// الباسورد
-document.getElementById('passBtn').addEventListener('click', function() {
-    let pass = document.getElementById('password').value;
-    if (pass === 'boda123') {
-        document.getElementById('passScreen').classList.add('hidden');
-        document.getElementById('nameScreen').classList.remove('hidden');
-        document.getElementById('passError').textContent = '';
-    } else {
-        document.getElementById('passError').textContent = 'الباسورد غلط يا نجم';
-    }
-});
-
-// الاسم
-document.getElementById('nameBtn').addEventListener('click', function() {
-    studentName = document.getElementById('studentName').value.trim();
-    if (!studentName) {
-        alert('اكتب اسمك الأول يا بطل');
-        return;
-    }
-    document.getElementById('sName1').textContent = studentName;
-    document.getElementById('sName2').textContent = studentName;
-    document.getElementById('sName3').textContent = studentName;
-    document.getElementById('sName4').textContent = studentName;
-    document.getElementById('nameScreen').classList.add('hidden');
-    document.getElementById('sectionScreen').classList.remove('hidden');
-    speak(`أهلاً يا ${studentName}.. يلا نبدأ رحلة الاختراق الأخلاقي`);
-});
-
-function openLesson(type) {
-    currentLesson = type;
-    let l = lessons[type];
-    document.getElementById('lessonTitle').textContent = l.title;
-    document.getElementById('lessonText').innerHTML = l.text.replace(/\${studentName}/g, studentName);
-    document.getElementById('sectionScreen').classList.add('hidden');
-    document.getElementById('lessonScreen').classList.remove('hidden');
-    startTimer();
-    speak(`يلا يا ${studentName}.. اقرا الشرح كويس.. عندك دقيقة`);
-}
-
-function startTimer() {
-    let time = 60;
-    document.getElementById('timer').classList.remove('hidden');
-    document.getElementById('understoodBtn').disabled = true;
-    timerInt = setInterval(() => {
-        time--;
-        document.getElementById('timeCount').textContent = time;
-        if (time <= 0) {
-            clearInterval(timerInt);
-            document.getElementById('timer').classList.add('hidden');
-            document.getElementById('understoodBtn').disabled = false;
-            speak(`خلاص يا ${studentName}.. دوس تم الفهم`);
-        }
-    }, 1000);
-}
-
-document.getElementById('understoodBtn').addEventListener('click', function() {
-    clearInterval(timerInt);
-    showQuiz();
-});
-
-function showQuiz() {
-    let l = lessons[currentLesson];
-    let html = '';
-    l.quiz.forEach((q,i) => {
-        html += `<div class="quiz"><h4>${i+1}. ${q.q}</h4>`;
-        q.opt.forEach((o,j) => {
-            html += `<div class="quiz-option" onclick="selectAns(${i},${j},this)">${o}</div>`;
+        // رسم الفيديوهات
+        const videosDiv = document.getElementById('videos');
+        videos.forEach(link => {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.innerHTML = `<div class="video-thumb"><iframe src="${link}" allowfullscreen></iframe></div>`;
+            card.onclick = () => { playMeow(); openPopup(link); };
+            videosDiv.appendChild(card);
         });
-        html += `</div>`;
-    });
-    document.getElementById('quizBox').innerHTML = html;
-    document.getElementById('lessonScreen').classList.add('hidden');
-    document.getElementById('quizScreen').classList.remove('hidden');
-    quizAns = [-1,-1,-1];
-}
 
-function selectAns(qi, ai, el) {
-    quizAns[qi] = ai;
-    el.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
-    el.classList.add('selected');
-}
-
-document.getElementById('checkQuizBtn').addEventListener('click', function() {
-    let l = lessons[currentLesson];
-    let correct = 0;
-    l.quiz.forEach((q,i) => {
-        let opts = document.querySelectorAll('.quiz')[i].querySelectorAll('.quiz-option');
-        opts.forEach((o,j) => {
-            if (j === q.c) o.classList.add('correct');
-            else if (j === quizAns[i] && j!== q.c) o.classList.add('wrong');
-        });
-        if (quizAns[i] === q.c) correct++;
-    });
-
-    if (correct >= 2) {
-        speak(`عاش يا ${studentName}.. جبت ${correct} من 3.. يلا نختار الجهاز`);
-        setTimeout(() => {
-            document.getElementById('quizScreen').classList.add('hidden');
-            showDevices();
-        }, 2000);
-    } else {
-        speak(`للأسف يا ${studentName}.. جبت ${correct} بس.. عيد الشرح`);
-        setTimeout(() => {
-            document.getElementById('quizScreen').classList.add('hidden');
-            document.getElementById('lessonScreen').classList.remove('hidden');
-            startTimer();
-        }, 2000);
-    }
-});
-
-function showDevices() {
-    let html = '';
-    devices.forEach(d => {
-        html += `<div class="device" onclick="selectDevice('${d.id}')">
-            <div class="icon">${d.icon}</div>
-            <h4>${d.name}</h4>
-        </div>`;
-    });
-    document.getElementById('devices').innerHTML = html;
-    document.getElementById('deviceScreen').classList.remove('hidden');
-}
-
-function selectDevice(id) {
-    let d = devices.find(x => x.id === id);
-    document.getElementById('simTitle').textContent = `اختراق ${d.name}`;
-    document.getElementById('simContent').innerHTML = getSim(id);
-    document.getElementById('deviceScreen').classList.add('hidden');
-    document.getElementById('simScreen').classList.remove('hidden');
-    speak(`يلا يا ${studentName}.. هنخترق ${d.name}`);
-}
-
-function getSim(id) {
-    let sims = {
-        android: `<div class="terminal"><div>root@android:~# اكتب: adb shell</div><input type="text" style="width:100%;background:#000;color:#0f0;border:none;outline:none;" onkeypress="if(event.key==='Enter'&&this.value.includes('adb'))completeHack()"></div>`,
-        iphone: `<div class="terminal"><div>اكتب: checkra1n -c</div><input type="text" style="width:100%;background:#000;color:#0f0;border:none;outline:none;" onkeypress="if(event.key==='Enter'&&this.value.includes('checkra1n'))completeHack()"></div>`,
-        windows: `<div class="terminal"><div>C:\\> اكتب: dir</div><input type="text" style="width:100%;background:#000;color:#0f0;border:none;outline:none;" onkeypress="if(event.key==='Enter'&&this.value==='dir')completeHack()"></div>`,
-        linux: `<div class="terminal"><div>$ اكتب: sudo -l</div><input type="text" style="width:100%;background:#000;color:#0f0;border:none;outline:none;" onkeypress="if(event.key==='Enter'&&this.value.includes('sudo'))completeHack()"></div>`,
-        router: `<input placeholder="admin" id="ru"><input placeholder="admin" id="rp" type="password"><button onclick="if(document.getElementById('ru').value==='admin'&&document.getElementById('rp').value==='admin')completeHack()">Login</button>`,
-        camera: `<div class="terminal">اكتب: rtsp://admin:admin@192.168.1.100<input onkeypress="if(event.key==='Enter')completeHack()"></div>`,
-        facebook: `<button onclick="completeHack()">اختراق فيسبوك</button>`,
-        gmail: `<button onclick="completeHack()">اختراق جيميل</button>`,
-        website: `<button onclick="completeHack()">SQL Injection</button>`,
-        atm: `<button onclick="completeHack()">اختراق ATM</button>`
-    };
-    return sims[id];
-}
-
-function completeHack() {
-    completedDevices++;
-    speak(`عاااش يا ${studentName}.. اخترقت الجهاز بنجاح`);
-    setTimeout(() => {
-        if (completedDevices >= 3) {
-            showCert();
-        } else {
-            backToDevices();
+        function playMeow(){
+            document.getElementById('meow').currentTime = 0;
+            document.getElementById('meow').play();
         }
-    }, 1500);
-}
 
-function backToDevices() {
-    document.getElementById('simScreen').classList.add('hidden');
-    document.getElementById('deviceScreen').classList.remove('hidden');
-}
+        function enterSite(){
+            playMeow();
+            document.getElementById('welcome').classList.add('hide');
+        }
 
-function showCert() {
-    document.getElementById('simScreen').classList.add('hidden');
-    document.getElementById('deviceScreen').classList.add('hidden');
-    document.getElementById('certScreen').classList.remove('hidden');
-    drawCert();
-    speak(`مبروك يا ${studentName}.. بقيت هاكر أخلاقي محترف`);
-}
+        function openPopup(link){
+            document.getElementById('popupFrame').src = link + '&autoplay=1';
+            document.getElementById('popup').classList.add('active');
+        }
 
-function drawCert() {
-    let c = document.getElementById('certCanvas');
-    let ctx = c.getContext('2d');
-    let g = ctx.createLinearGradient(0,0,800,600);
-    g.addColorStop(0,'#1a1f3a');
-    g.addColorStop(1,'#0a0e27');
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,800,600);
-    ctx.strokeStyle = '#00ff88';
-    ctx.lineWidth = 10;
-    ctx.strokeRect(20,20,760,560);
-    ctx.fillStyle = '#00ff88';
-    ctx.font = 'bold 48px Cairo';
-    ctx.textAlign = 'center';
-    ctx.fillText('شهادة إتمام',400,100);
-    ctx.font = 'bold 32px Cairo';
-    ctx.fillText('دورة الاختراق الأخلاقي',400,150);
-    ctx.fillStyle = '#fff';
-    ctx.font = 'bold40px Cairo';
-    ctx.fillText(studentName,400,280);
-    ctx.font = '24px Cairo';
-    ctx.fillText('اجتاز بنجاح دورة الاختراق الأخلاقي',400,340);
-    ctx.fillText('من أكاديمية بودا للاختراق الأخلاقي',400,380);
-    ctx.font = '20px Cairo';
-    ctx.fillText(new Date().toLocaleDateString('ar-EG'),400,480);
-    ctx.font = 'italic 24px Cairo';
-    ctx.fillText('أكاديمية بودا',400,530);
-}
+        function closePopup(){
+            document.getElementById('popupFrame').src = '';
+            document.getElementById('popup').classList.remove('active');
+        }
 
-document.getElementById('downloadBtn').addEventListener('click', function() {
-    let c = document.getElementById('certCanvas');
-    c.toBlob(function(blob) {
-        let url = URL.createObjectURL(blob);
-        let a = document.createElement('a');
-        a.href = url;
-        a.download = `شهادة-${studentName}.png`;
-        a.click();
-        URL.revokeObjectURL(url);
-        speak(`تم التحميل يا ${studentName}.. شوف المعرض`);
-    });
-});
-</script>
+        // كل دوسة في الموقع تعمل مياو
+        document.addEventListener('click', () => playMeow());
+    </script>
 </body>
 </html>
